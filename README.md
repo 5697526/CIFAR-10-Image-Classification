@@ -54,7 +54,7 @@ python hyperparam_tuning.py
 
 多次更改参数设置，使用网格搜索方法对模型的超参数进行调优，并将调优结果保存下来。
 
-#### 测试模型
+#### 测试模型：
 运行 test.py 文件对训练好的模型进行测试。
 
 `
@@ -62,6 +62,16 @@ python test.py
 `
 
 测试完成后，会输出模型在测试集上的准确率等评估指标。
+
+#### 可视化工具：
+运行 utils.py 文件对训练好的模型进行可视化分析。
+
+`
+python utils.py
+`
+
+进行权重可视化，输出混淆矩阵。
+
 
 ### 五、模型权重下载
 模型储存在我的网盘：https://pan.baidu.com/s/1zzPYsj2yEefE7U7qxRra6Q?pwd=nyv3 提取码: nyv3
