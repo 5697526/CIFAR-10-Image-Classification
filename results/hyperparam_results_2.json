@@ -1,0 +1,64 @@
+{
+  "all_results": [
+    {
+      "hidden_size": 512,
+      "learning_rate": 0.018,
+      "reg_lambda": 0.01,
+      "activation": "leaky_relu",
+      "learning_rate_decay": 0.98,
+      "val_acc": 0.5578,
+      "final_train_loss": 4.209899821243022,
+      "final_val_loss": 4.503786040789418
+    },
+    {
+      "hidden_size": 512,
+      "learning_rate": 0.018,
+      "reg_lambda": 0.009,
+      "activation": "leaky_relu",
+      "learning_rate_decay": 0.98,
+      "val_acc": 0.5474,
+      "final_train_loss": 4.2290835970611536,
+      "final_val_loss": 4.556173077703663
+    },
+    {
+      "hidden_size": 512,
+      "learning_rate": 0.018,
+      "reg_lambda": 0.008,
+      "activation": "leaky_relu",
+      "learning_rate_decay": 0.98,
+      "val_acc": 0.553,
+      "final_train_loss": 4.209965929080219,
+      "final_val_loss": 4.5690962516715
+    },
+    {
+      "hidden_size": 512,
+      "learning_rate": 0.018,
+      "reg_lambda": 0.011,
+      "activation": "leaky_relu",
+      "learning_rate_decay": 0.98,
+      "val_acc": 0.5582,
+      "final_train_loss": 4.15608113973624,
+      "final_val_loss": 4.418577584935932
+    },
+    {
+      "hidden_size": 512,
+      "learning_rate": 0.018,
+      "reg_lambda": 0.012,
+      "activation": "leaky_relu",
+      "learning_rate_decay": 0.98,
+      "val_acc": 0.554,
+      "final_train_loss": 4.09239249924723,
+      "final_val_loss": 4.328132447546357
+    }
+  ],
+  "best_result": {
+    "hidden_size": 512,
+    "learning_rate": 0.018,
+    "reg_lambda": 0.011,
+    "activation": "leaky_relu",
+    "learning_rate_decay": 0.98,
+    "val_acc": 0.5582,
+    "final_train_loss": 4.15608113973624,
+    "final_val_loss": 4.418577584935932
+  }
+}

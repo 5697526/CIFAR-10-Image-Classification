@@ -132,13 +132,13 @@ if __name__ == '__main__':
         train_data, train_labels)
 
     config = {
-        'hidden_size': 1024,
+        'hidden_size': 512,
         'activation': 'leaky_relu',
         'num_epochs': 100,
         'batch_size': 256,
-        'learning_rate': 0.01,
-        'reg_lambda': 0.01,
-        'learning_rate_decay': 0.95
+        'learning_rate': 0.018,
+        'reg_lambda': 0.011,
+        'learning_rate_decay': 0.98
     }
 
     model, history = training(
