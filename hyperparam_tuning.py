@@ -7,10 +7,8 @@ from data_loader import load_data, preprocess_data, validation
 
 
 def save_results(results, best_result, save_dir='results'):
-    """保存结果到文件"""
     os.makedirs(save_dir, exist_ok=True)
 
-    # 保存JSON
     json_path = os.path.join(save_dir, 'hyperparam_results_3.json')
     with open(json_path, 'w') as f:
         json.dump({
@@ -18,7 +16,6 @@ def save_results(results, best_result, save_dir='results'):
             'best_result': best_result
         }, f, indent=2)
 
-    # 单独保存最佳结果
     best_path = os.path.join(save_dir, 'best_result.json')
     with open(best_path, 'w') as f:
         json.dump(best_result, f, indent=2)
@@ -29,19 +26,16 @@ def save_results(results, best_result, save_dir='results'):
 
 
 def hyperparameter():
-    # 超参数搜索空间
     hidden_sizes = [512]
     learning_rates = [0.018, 0.019, 0.017]
     reg_lambdas = [0.011]
     activations = ['leaky_relu']
     learning_rate_decays = [0.98]
 
-    # 其他配置
     num_epochs = 20
     batch_size = 256
 
     try:
-        # 加载数据
         train_data, train_labels, test_data, test_labels = load_data()
         train_data, test_data = preprocess_data(train_data, test_data)
         train_data, train_labels, val_data, val_labels = validation(
@@ -58,7 +52,6 @@ def hyperparameter():
     print(
         f"\nStarting hyperparameter search ({total_combinations} combinations)...")
 
-    # 网格搜索
     for hidden_size, lr, reg, activation, decay in itertools.product(
             hidden_sizes, learning_rates, reg_lambdas, activations, learning_rate_decays):
 
@@ -77,14 +70,12 @@ def hyperparameter():
         }
 
         try:
-            # 训练模型
             _, history = training(
                 train_data, train_labels, val_data, val_labels, config)
         except Exception as e:
             print(f"Error training model with hyperparameters {config}: {e}")
             continue
 
-        # 记录结果
         best_val_acc = max(history['accuracy'])
         results.append({
             'hidden_size': hidden_size,
@@ -103,10 +94,8 @@ def hyperparameter():
         print("No valid results obtained.")
         return [], {}
 
-    # 找出最佳结果
     best_result = max(results, key=lambda x: x['val_acc'])
 
-    # 打印摘要
     print("\n=== Search Summary ===")
     print(f"Total combinations tested: {len(results)}")
     print("\nTop 3 Performers:")
@@ -123,7 +112,6 @@ def hyperparameter():
     print(f"Learning Rate Decay: {best_result['learning_rate_decay']}")
     print(f"Validation Accuracy: {best_result['val_acc']:.4f}")
 
-    # 保存结果
     save_results(results, best_result)
 
     return results, best_result
