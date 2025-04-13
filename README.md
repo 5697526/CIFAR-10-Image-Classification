@@ -64,4 +64,4 @@ python test.py
 测试完成后，会输出模型在测试集上的准确率等评估指标。
 
 ### 五、模型权重下载
-
+模型储存在我的网盘：https://pan.baidu.com/s/1zzPYsj2yEefE7U7qxRra6Q?pwd=nyv3 提取码: nyv3
